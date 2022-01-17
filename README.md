@@ -13,7 +13,7 @@ Tool for developers to scrutinise web application information architectures.
 ## Getting Started
 
 ```shell
-nvm use && make
+nvm use && make && ./scrutinise -url https://danieltedman.com
 ```
 
 ## Design

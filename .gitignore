@@ -3,3 +3,13 @@
 
 # Don't include external dependencies
 /node_modules/
+/vendor/
+
+# Don't include binary
+/scrutinise
+
+# Don't include code coverage
+/coverage.txt
+
+# Don't include build output
+/results.csv
