@@ -1,4 +1,4 @@
-package core
+package check_test
 
 import "testing"
 

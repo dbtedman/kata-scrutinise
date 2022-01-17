@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/dbtedman/kata-scrutinise/lib/interfaces/cli"
+	"github.com/dbtedman/kata-scrutinise/cmd"
 )
 
 func main() {
 	// TODO: We want to bootstrap all of our services here?
-	cli.Run()
+	cmd.Run()
 }

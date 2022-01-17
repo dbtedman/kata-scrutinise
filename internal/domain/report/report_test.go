@@ -1,17 +1,19 @@
-package core
+package report_test
 
 import (
 	"bytes"
 	"fmt"
+	"github.com/dbtedman/kata-scrutinise/internal/domain/check"
+	"github.com/dbtedman/kata-scrutinise/internal/domain/report"
 	"testing"
 )
 
 func TestWriteResultsToWriter(t *testing.T) {
 	t.Run("handles empty link statuses", func(t *testing.T) {
 		buffer := bytes.Buffer{}
-		linkStatuses := make([]LinkStatus, 0)
+		linkStatuses := make([]check.LinkStatus, 0)
 
-		WriteResultsToWriter(&buffer, linkStatuses)
+		report.WriteResultsToWriter(&buffer, linkStatuses)
 
 		got := buffer.String()
 		want := "URL,Success,Redirects,Code\n"
@@ -23,9 +25,9 @@ func TestWriteResultsToWriter(t *testing.T) {
 
 	t.Run("handles a single link status", func(t *testing.T) {
 		buffer := bytes.Buffer{}
-		linkStatuses := make([]LinkStatus, 0)
+		linkStatuses := make([]check.LinkStatus, 0)
 
-		exampleLinkStatus := LinkStatus{
+		exampleLinkStatus := check.LinkStatus{
 			Url:       "https://example.com",
 			Success:   false,
 			Redirects: true,
@@ -34,7 +36,7 @@ func TestWriteResultsToWriter(t *testing.T) {
 
 		linkStatuses = append(linkStatuses, exampleLinkStatus)
 
-		WriteResultsToWriter(&buffer, linkStatuses)
+		report.WriteResultsToWriter(&buffer, linkStatuses)
 
 		got := buffer.String()
 		want := fmt.Sprintf(

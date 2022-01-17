@@ -1,4 +1,4 @@
-package core
+package lang
 
 const CliOptionUrl = "Website URL to parse for links to validate."
 const CliOptionOutFile = "(optional) Path to output report csv to."

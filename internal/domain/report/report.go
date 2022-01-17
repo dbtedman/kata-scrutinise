@@ -1,14 +1,15 @@
-package core
+package report
 
 import (
 	"encoding/csv"
-	"github.com/dbtedman/kata-scrutinise/lib/services"
+	"github.com/dbtedman/kata-scrutinise/internal/domain/check"
+	"github.com/dbtedman/kata-scrutinise/internal/gateway/logger"
 	"io"
 	"os"
 	"strconv"
 )
 
-func WriteResultsToFile(filePath string, linkStatusList []LinkStatus) {
+func WriteResultsToFile(filePath string, linkStatusList []check.LinkStatus) {
 	file, _ := os.Create(filePath)
 
 	if file != nil {
@@ -19,10 +20,10 @@ func WriteResultsToFile(filePath string, linkStatusList []LinkStatus) {
 
 	WriteResultsToWriter(file, linkStatusList)
 
-	services.InfoFormat("Results written to file \"%s\"", filePath)
+	logger.InfoFormat("Results written to file \"%s\"", filePath)
 }
 
-func WriteResultsToWriter(out io.Writer, linkStatusList []LinkStatus) {
+func WriteResultsToWriter(out io.Writer, linkStatusList []check.LinkStatus) {
 	writer := csv.NewWriter(out)
 
 	if writer != nil {

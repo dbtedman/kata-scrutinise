@@ -1,4 +1,4 @@
-package core
+package fetch
 
 import (
 	"github.com/PuerkitoBio/goquery"

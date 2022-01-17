@@ -1,7 +1,7 @@
-package core
+package check
 
 import (
-	"github.com/dbtedman/kata-scrutinise/lib/services"
+	"github.com/dbtedman/kata-scrutinise/internal/gateway/logger"
 	"net/http"
 	"sync"
 	"time"
@@ -36,7 +36,7 @@ func CheckAllLinkStatus(urls []string) []LinkStatus {
 	go func() {
 		// This runs after each go routine has finished, how does this work?
 		for linkStatus := range linkStatuses {
-			services.DebugFormat("checking: %s", linkStatus.Url)
+			logger.DebugFormat("checking: %s", linkStatus.Url)
 			linkStatusList = append(linkStatusList, *linkStatus)
 		}
 	}()
