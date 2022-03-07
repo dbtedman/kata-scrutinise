@@ -2,7 +2,7 @@
 
 > ⚠️ WARNING: Not production ready code.
 
-[![CI Results](https://github.com/dbtedman/kata-scrutinize/workflows/ci/badge.svg)](https://github.com/dbtedman/kata-scrutinize/actions?workflow=ci)
+[![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/kata-scrutinize/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/kata-scrutinize/actions/workflows/ci.yml)
 
 Tool for developers to scrutinise web application information architectures.
 
