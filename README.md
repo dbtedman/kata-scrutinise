@@ -1,6 +1,7 @@
-# [Kata](https://github.com/dbtedman/kata) // [Scrutinize](https://github.com/dbtedman/kata-scrutinize)
+# [Scrutinize](https://github.com/dbtedman/kata-scrutinize)
 
-> ⚠️ WARNING: Not production ready code.
+> **⚠️ WARNING:** Not production ready code, instead a [Code Kata](https://github.com/dbtedman#code-kata) intended to
+> hone my programming skills through practice and repetition.
 
 [![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/kata-scrutinize/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/kata-scrutinize/actions/workflows/ci.yml)
 [![sast workflow status](https://img.shields.io/github/workflow/status/dbtedman/kata-scrutinize/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/kata-scrutinize/actions/workflows/sast.yml)
@@ -9,13 +10,37 @@
 Tool for developers to scrutinise web application information architectures.
 
 -   [Getting Started](#getting-started)
+-   [Verification](#verification)
 -   [Design](#design)
+-   [References](#references)
 -   [License](#license)
 
 ## Getting Started
 
+### Prepare
+
+Begin by [installing Go](https://go.dev/doc/install) if you have not done so already.
+
+You can test your install by calling the following command:
+
 ```shell
-nvm use && make && ./scrutinise -url https://danieltedman.com
+go version
+```
+
+Your version must be greater than or equal to the version defined in `./go.mod` file.
+
+### Install, Verify, and Build
+
+Install, verify, and build `./scrutinise` binary.
+
+```shell
+nvm use && make
+```
+
+### Scrutinise a URL
+
+```shell
+./scrutinise -url https://danieltedman.com
 ```
 
 You will see output like the following:
@@ -32,6 +57,37 @@ You will see output like the following:
 ```
 
 The results are written to the file `results.csv`.
+
+### Help
+
+Learn about the available commands in the help menu.
+
+```shell
+./scrutinise --help
+```
+
+## Verification
+
+### Linting
+
+-   [Prettier](https://prettier.io)
+-   [gofmt](https://pkg.go.dev/cmd/gofmt)
+
+```shell
+make lint
+```
+
+These rules can then be automatically applied:
+
+```shell
+make format
+```
+
+### Unit Testing
+
+```shell
+make test
+```
 
 ## Design
 
@@ -88,6 +144,10 @@ _Placeholder_
 _Placeholder_
 
 #### [A10:2021-Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
+
+_Placeholder_
+
+## References
 
 _Placeholder_
 
