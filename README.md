@@ -6,6 +6,7 @@
 [![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/kata-scrutinize/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/kata-scrutinize/actions/workflows/ci.yml)
 [![sast workflow status](https://img.shields.io/github/workflow/status/dbtedman/kata-scrutinize/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/kata-scrutinize/actions/workflows/sast.yml)
 ![language: go](https://img.shields.io/badge/language-go-blue.svg?style=for-the-badge&logo=go)
+[![MIT License](https://img.shields.io/github/license/dbtedman/kata-scrutinize?color=orange&style=for-the-badge)](https://github.com/dbtedman/kata-scrutinize/blob/main/LICENSE.md)
 
 Tool for developers to scrutinise web application information architectures.
 
